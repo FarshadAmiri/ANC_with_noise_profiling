@@ -1,0 +1,29 @@
+"""Example configuration file for ANC Noise Profiling."""
+
+# Audio processing settings
+audio:
+  sample_rate: 16000
+  chunk_duration: 0.5
+  device: null  # Use default audio device
+
+# Noise profiling configuration
+noise_profiling:
+  method: "adaptive"
+  silence_threshold: 0.01
+  min_silence_duration: 0.5
+
+# Processing options
+processing:
+  output_mode: "file"
+  save_raw_audio: false
+  visualization: false
+
+# Logging configuration
+logging:
+  level: "INFO"
+  include_timestamp: true
+
+# Output settings
+output:
+  directory: "output"
+  filename_template: "denoised_{timestamp}.wav"
