@@ -5,6 +5,11 @@ This script demonstrates various ways to use the file-based noise reduction func
 """
 
 import os
+import sys
+
+# Add parent directory to path for local testing
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 from anc_noise_profiling import reduce_noise_file, NoiseReductionConfig
 
 def basic_file_processing():

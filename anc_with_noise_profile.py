@@ -6,6 +6,11 @@ that demonstrates the same functionality using the professional package structur
 """
 
 import os
+import sys
+
+# Add current directory to path for local testing
+sys.path.insert(0, os.path.dirname(__file__))
+
 from anc_noise_profiling import reduce_noise_file, NoiseReductionConfig
 
 def main():

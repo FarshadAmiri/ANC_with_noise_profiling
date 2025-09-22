@@ -4,7 +4,13 @@ Real-time processing examples for ANC with Noise Profiling
 This script demonstrates various ways to use the real-time noise reduction functionality.
 """
 
+import os
+import sys
 import time
+
+# Add parent directory to path for local testing
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 from anc_noise_profiling import reduce_noise_realtime, NoiseReductionConfig
 
 def microphone_to_file():
