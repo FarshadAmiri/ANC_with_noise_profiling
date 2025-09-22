@@ -1,0 +1,87 @@
+#!/bin/bash
+# Command-line examples for ANC with Noise Profiling
+
+echo "ANC with Noise Profiling - CLI Examples"
+echo "======================================"
+
+echo ""
+echo "1. Basic file processing:"
+echo "anc-noise-profiling file input.wav output.wav"
+
+echo ""
+echo "2. File processing with custom noise profile:"
+echo "anc-noise-profiling file input.wav output.wav --noise-profile first_1.0"
+
+echo ""
+echo "3. Adaptive noise detection with visualization:"
+echo "anc-noise-profiling file input.wav output.wav --noise-profile adaptive --visualization"
+
+echo ""
+echo "4. File processing with all options:"
+echo "anc-noise-profiling file input.wav output.wav \\"
+echo "    --noise-profile adaptive \\"
+echo "    --silence-threshold 0.02 \\"
+echo "    --min-silence-duration 0.5 \\"
+echo "    --visualization \\"
+echo "    --save-raw-audio"
+
+echo ""
+echo "5. Real-time microphone recording:"
+echo "anc-noise-profiling realtime --input-source mic --output-file recording.wav --duration 10"
+
+echo ""
+echo "6. Real-time microphone with live streaming:"
+echo "anc-noise-profiling realtime --input-source mic --output-mode stream --duration 30"
+
+echo ""
+echo "7. Real-time microphone with streaming and file output:"
+echo "anc-noise-profiling realtime \\"
+echo "    --input-source mic \\"
+echo "    --output-mode stream+file \\"
+echo "    --output-file live_recording.wav \\"
+echo "    --duration 20 \\"
+echo "    --save-raw-audio"
+
+echo ""
+echo "8. File to real-time streaming:"
+echo "anc-noise-profiling realtime \\"
+echo "    --input-source file \\"
+echo "    --input-file input.wav \\"
+echo "    --output-mode stream"
+
+echo ""
+echo "9. Real-time with custom settings:"
+echo "anc-noise-profiling realtime \\"
+echo "    --input-source mic \\"
+echo "    --output-file recording.wav \\"
+echo "    --noise-profile adaptive \\"
+echo "    --chunk-duration 0.2 \\"
+echo "    --silence-threshold 0.015 \\"
+echo "    --sample-rate 22050"
+
+echo ""
+echo "10. Processing with specific audio device:"
+echo "anc-noise-profiling realtime \\"
+echo "    --input-source mic \\"
+echo "    --output-file recording.wav \\"
+echo "    --device 1"
+
+echo ""
+echo "11. Batch processing (using shell loop):"
+echo "for file in *.wav; do"
+echo "    anc-noise-profiling file \"\$file\" \"clean_\$file\" --noise-profile adaptive"
+echo "done"
+
+echo ""
+echo "12. Get help:"
+echo "anc-noise-profiling --help"
+echo "anc-noise-profiling file --help"
+echo "anc-noise-profiling realtime --help"
+
+echo ""
+echo "Notes:"
+echo "- Replace 'input.wav' with your actual audio file paths"
+echo "- For microphone examples, ensure you have a working microphone"
+echo "- For streaming examples, ensure you have speakers/headphones"
+echo "- Use Ctrl+C to stop unlimited duration recordings"
+echo "- Check available audio devices with: python -c \"import sounddevice; print(sounddevice.query_devices())\""
