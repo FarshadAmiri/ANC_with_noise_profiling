@@ -8,12 +8,21 @@ from the input audio itself, supporting both real-time and file-based processing
 __version__ = "1.0.0"
 __author__ = "Farshad Amiri"
 
-from .core.processor import NoiseReductionProcessor
-from .profiling.extractor import NoiseProfileExtractor
-from .io.audio_handler import AudioHandler
-
-__all__ = [
-    "NoiseReductionProcessor",
-    "NoiseProfileExtractor", 
-    "AudioHandler",
-]
+# Import main classes for easy access
+try:
+    from .core.processor import NoiseReductionProcessor
+    from .profiling.extractor import NoiseProfileExtractor
+    from .io.audio_handler import AudioHandler
+    from .utils.config import Config
+    from .utils.logging_config import setup_logging
+    
+    __all__ = [
+        "NoiseReductionProcessor",
+        "NoiseProfileExtractor", 
+        "AudioHandler",
+        "Config",
+        "setup_logging",
+    ]
+except ImportError:
+    # Handle case where dependencies aren't installed yet
+    __all__ = []
