@@ -90,31 +90,6 @@ config = NoiseReductionConfig(
 reduce_noise_file("input.wav", "output.wav", config=config)
 ```
 
-### Command Line Interface
-
-#### File processing
-```bash
-# Basic usage
-anc-noise-profiling file input.wav output.wav
-
-# With custom noise profile
-anc-noise-profiling file input.wav output.wav --noise-profile first_1.0
-
-# With visualization
-anc-noise-profiling file input.wav output.wav --noise-profile adaptive --visualization
-```
-
-#### Real-time processing
-```bash
-# Microphone to file
-anc-noise-profiling realtime --input-source mic --output-file recording.wav
-
-# File to speakers (streaming)
-anc-noise-profiling realtime --input-source file --input-file input.wav --output-mode stream
-
-# Microphone with live streaming and file output
-anc-noise-profiling realtime --input-source mic --output-mode stream+file --output-file output.wav
-```
 
 ## Noise Profile Methods
 
@@ -231,4 +206,3 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 - Built on top of the excellent `noisereduce` library
 - Uses `soundfile` and `sounddevice` for audio I/O
-- Original implementation by Farshad Amiri

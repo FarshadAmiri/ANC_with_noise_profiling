@@ -1,9 +1,0 @@
-include README.md
-include LICENSE
-include requirements.txt
-include examples/*.py
-include examples/*.sh
-include tests/*.py
-recursive-include anc_noise_profiling *.py
-global-exclude *.pyc
-global-exclude __pycache__

@@ -55,7 +55,7 @@ def reduce_noise_streaming(input_source="file",
             seconds = float(seconds)
             sample_count = int(seconds * rate)
             if part == "first":
-                noise_profile = data[:sample_count]
+                noise_profile = data[:sample_count] 
             else:
                 noise_profile = data[-sample_count:]
         elif noise_profile_file == "adaptive":
@@ -174,16 +174,15 @@ def reduce_noise_streaming(input_source="file",
 
 
 
-
-
+output_path = r"D:\Git_repos\ANC_with_noise_profiling\out_1.wav"
 input_path = r"C:\Users\User_1\Desktop\noisy_fish.wav"
-# input_path = r"D:\Git_repos\Noise_reduction_repos\DeepNoiseReducer\noisy_auido_files\Comm1.mp3"
-output_path = r"D:\Git_repos\Noise_reduction_repos\DeepNoiseReducer\out_2.wav"
+
 
 result = reduce_noise_streaming(input_source="mic", # "mic", "file"
                                 input_file=None,  # None or Path
                                 output_file=output_path,
-                                noise_profile_file="first_0.5",
+                                # noise_profile_file="first_0.5",
+                                noise_profile_file="adaptive",
                                 silence_threshold=0.01,
                                 min_silence_duration=0.3,
                                 output_mode="stream+file",
