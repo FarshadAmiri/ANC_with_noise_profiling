@@ -10,7 +10,7 @@ import sys
 import time
 
 
-def reduce_noise_streaming(input_source="mic",
+def anc(input_source="mic",
                            input_path=None,
                            output_mode="stream+file",
                            output_path=None,
@@ -475,7 +475,7 @@ if __name__ == "__main__":
     output_path = "output_recording.wav"
     plot_path = "noise_analysis.png"
 
-    result = reduce_noise_streaming(
+    result = anc(
         input_source="mic",  # "mic" or "file"
         input_path=None,  # Required for file mode
         output_path=output_path,

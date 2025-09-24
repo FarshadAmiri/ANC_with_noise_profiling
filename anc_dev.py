@@ -10,7 +10,7 @@ import sys
 import time
 
 
-def reduce_noise_streaming(input_source="mic",
+def anc(input_source="mic",
                            input_path=None,
                            output_mode="stream+file",
                            output_path=None,
@@ -475,32 +475,18 @@ input_path = r"C:\Users\User_1\Desktop\noisy_fish.wav"
 plot_path = r"D:\Git_repos\ANC_with_noise_profiling\out_1_plot.png"
 
 
-result = reduce_noise_streaming(input_source="mic", # "mic", "file"
-                                input_path=None,  # None or Path
-                                output_path=output_path,
-                                # noise_profile_mode="first_0.5",
-                                noise_profile_mode="adaptive",
-                                noise_amp_threshold=0.025,
-                                min_noise_duration=0.1,
-                                output_mode="stream+file",
-                                chunk_duration=2.5,
-                                save_raw_audio=True,
-                                visualization=True,
-                                plot_path=plot_path,
-                                device=None,
-                                duration=None,
-                                adaptive_refresh_chunks=4)
-
-
-# result = reduce_noise_streaming(input_source="file", # "mic", "file"
-#                                 input_path=input_path,  # None or Path
-#                                 output_path=output_path,
-#                                 noise_profile_mode="first_0.5",
-#                                 noise_amp_threshold=0.01,
-#                                 min_noise_duration=0.3,
-#                                 output_mode="stream+file",
-#                                 chunk_duration=4,
-#                                 save_raw_audio=True,
-#                                 visualization=False,
-#                                 device=None,
-#                                 duration=None)
+result = anc(input_source="mic", # "mic", "file"
+            input_path=None,  # None or Path
+            output_path=output_path,
+            # noise_profile_mode="first_0.5",
+            noise_profile_mode="adaptive",
+            noise_amp_threshold=0.025,
+            min_noise_duration=0.1,
+            output_mode="stream+file",
+            chunk_duration=2.5,
+            save_raw_audio=True,
+            visualization=True,
+            plot_path=plot_path,
+            device=None,
+            duration=None,
+            adaptive_refresh_chunks=4)
