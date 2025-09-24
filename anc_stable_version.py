@@ -469,22 +469,37 @@ def reduce_noise_streaming(input_source="mic",
     return stream_queue if output_mode in ("stream", "stream+file") else None
 
 
-output_path = r"D:\Git_repos\ANC_with_noise_profiling\out_1.wav"
-input_path = r"C:\Users\User_1\Desktop\noisy_fish.wav"
-plot_path = r"D:\Git_repos\ANC_with_noise_profiling\out_1_plot.png"
+# Example usage:
+if __name__ == "__main__":
+    # Example 1: Real-time microphone processing
+    output_path = "output_recording.wav"
+    plot_path = "noise_analysis.png"
 
+    result = reduce_noise_streaming(
+        input_source="mic",  # "mic" or "file"
+        input_path=None,  # Required for file mode
+        output_path=output_path,
+        noise_profile_mode="adaptive",
+        noise_amp_threshold=0.025,
+        min_noise_duration=0.1,
+        output_mode="stream+file",
+        chunk_duration=2.5,
+        save_raw_audio=True,
+        visualization=True,
+        plot_path=plot_path,
+        device=None,
+        duration=None,  # Set to number of seconds to limit recording
+        adaptive_refresh_chunks=4
+    )
 
-result = reduce_noise_streaming(input_source="mic", # "mic", "file"
-                                input_path=None,  # None or Path
-                                output_path=output_path,
-                                noise_profile_mode="adaptive",
-                                noise_amp_threshold=0.025,
-                                min_noise_duration=0.1,
-                                output_mode="stream+file",
-                                chunk_duration=2.5,
-                                save_raw_audio=True,
-                                visualization=True,
-                                plot_path=plot_path,
-                                device=None,
-                                duration=None,
-                                adaptive_refresh_chunks=4)
+    # Example 2: File processing
+    # Uncomment to process an audio file instead:
+    # result = reduce_noise_streaming(
+    #     input_source="file",
+    #     input_path="your_noisy_audio.wav",
+    #     output_path="clean_audio.wav",
+    #     noise_profile_mode="adaptive",
+    #     output_mode="file",
+    #     visualization=True,
+    #     plot_path="file_analysis.png"
+    # )
