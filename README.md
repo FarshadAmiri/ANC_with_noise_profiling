@@ -53,7 +53,7 @@ result = anc(
 noise_profile_mode = "adaptive"
 noise_profile_mode = "noise_sample.wav"
 noise_profile_mode = "first_{x}s" # x is a float number. first x seconds of the audio
-noise_profile_mode =  "last_{x}s"  # x is a float number.  last x seconds of the audio
+noise_profile_mode =  "last_{x}s" # x is a float number.  last x seconds of the audio
 ```
 
 #### Real-time processing
