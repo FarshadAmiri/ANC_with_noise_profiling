@@ -11,19 +11,19 @@ import time
 
 
 def anc(input_source="mic",
-                           input_path=None,
-                           output_mode="stream+file",
-                           output_path=None,
-                           noise_profile_mode="adaptive",
-                           noise_amp_threshold=0.025,
-                           min_noise_duration=0.2,
-                           chunk_duration=2.5,
-                           save_raw_audio=False,
-                           visualization=False,
-                           plot_path=None,
-                           device=None,
-                           duration=None,
-                           adaptive_refresh_chunks=4):
+        input_path=None,
+        output_mode="stream+file",
+        output_path=None,
+        noise_profile_mode="adaptive",
+        noise_amp_threshold=0.025,
+        min_noise_duration=0.2,
+        chunk_duration=2.5,
+        save_raw_audio=False,
+        visualization=False,
+        plot_path=None,
+        device=None,
+        duration=None,
+        adaptive_refresh_chunks=4):
     """
     Noise reduction (streaming/file) using a noise profile.
 
